@@ -4,7 +4,7 @@ from time import time
 
 from interactions import File
 
-from cogs.modules.video_upload import video_upload
+from cogs.module.video_upload import video_upload
 
 
 async def get_contents(api_callback: dict, host: str = "fx") -> dict:
@@ -109,7 +109,6 @@ async def by_fx(api_callback: dict):
         media = tweet["media"]
 
         if "videos" in media:
-            tasks: list = []
             for raw_video in media["videos"]:
                 videos.append(await video_upload(raw_video["url"]))
 
