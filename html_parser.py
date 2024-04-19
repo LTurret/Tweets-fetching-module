@@ -31,6 +31,7 @@ def debug():
 if __name__ == "__main__":
     try:
         debug()
+        print("\033[93m")  # Format warning
     except Exception as exception:
         print(exception)
     raise Warning(f"{__file__} Running with debug mode, Please note that this script is not tend to run independently.")
